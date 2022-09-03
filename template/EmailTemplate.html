@@ -1,0 +1,45 @@
+<html> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            #root{
+                display:block;
+                background-color:#99ffcc;
+                border:5px solid #00e699;
+                border-radius:20px;
+            }
+            h3 {
+                padding:15px;
+                color:#00995c;
+                width:100%;
+                text-align:center;
+                margin-top:35px;
+            }
+            p {
+                color:#00995c;
+                width:100%;
+                text-align:center;
+            }
+            #sub {
+                display:-webkit-box;
+                display:-moz-box;
+                display:-ms-flexbox;
+                display:-webkit-flex;
+                display:flex;
+                margin: 0 auto;
+            }
+        </style>
+    </head> 
+    <body>
+        <div id='root'>
+            <h3>Assalamu`alaikum, {{ .Name }}</h3><br/>
+            <p>Please verify if that you. By pressing the button bellow means you are verified :</p>
+            <div id='sub'>
+                <a rel='noreferer noopener' href={{ partial (printf "http://localhost:3000/validate?tk=%s" .Token }} target='_blank'
+                style='background-color:#ff6600;color:#ffff;border:3px solid #ff3300;border-radius:20px;padding:8px;margin-bottom:40px'>click me</a>
+            </div>
+        </div>
+    </body>
+</html>
